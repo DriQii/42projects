@@ -5,8 +5,3 @@ int ft_isalpha(char c)
         return (0);
     return (1);
 }
-
-int main(void)
-{
-    printf("%d\n", ft_isalpha('c'));
-}
