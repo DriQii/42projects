@@ -1,3 +1,6 @@
+
+#include "header.h"
+
 int ft_strlen(char *str)
 {
     int i;
