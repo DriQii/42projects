@@ -13,5 +13,8 @@ int ft_strlcat(char *dest, char *src, int size);
 int ft_strlen(char *str);
 int ft_strncmp(char *s1, char *s2, int n);
 char *ft_strncpy(char *dest, char *src, int n);
+void	ft_bzero(void *str, int len);
+void	*ft_memset(void *str, int c, int count);
+void	*ft_memcpy(void *dest, void *src, int len);
 
 #endif
