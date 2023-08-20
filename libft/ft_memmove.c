@@ -20,4 +20,5 @@ void *ft_memmove(void *dest, void *src, int len)
 	while (i < len)
 		*destchar++ = tempsrc[i++];
 	return (dest);
+	free (tempsrc);
 }
