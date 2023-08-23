@@ -12,7 +12,7 @@ int ft_strlcat(char *dest, char *src, int size)
     src_len =  ft_strlen(src);
     j = 0;
     i = 0;
-    if (size - 1 <= dest_len)
+    if (size - 1 < dest_len)
         return (src_len + size);
     while (dest[i])
         i++;
