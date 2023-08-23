@@ -9,3 +9,9 @@ void	*ft_memset(void *str, int c, int count)
 	}
 	return (str);
 }
+
+int main (void)
+{
+	char str[] = "Hello World";
+	ft_memset(str, 'o', 3);
+}

@@ -1,5 +1,5 @@
 
-#include "header.h"
+#include "libft.h"
 
 void *ft_memmove(void *dest, void *src, int len)
 {
@@ -19,6 +19,6 @@ void *ft_memmove(void *dest, void *src, int len)
 	i = 0;
 	while (i < len)
 		*destchar++ = tempsrc[i++];
-	return (dest);
 	free (tempsrc);
+	return (dest);
 }

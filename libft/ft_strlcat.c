@@ -1,5 +1,5 @@
 
-#include "header.h"
+#include "libft.h"
 
 int ft_strlcat(char *dest, char *src, int size)
 {
