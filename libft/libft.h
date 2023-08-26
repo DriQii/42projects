@@ -21,5 +21,12 @@ void	*ft_memset(void *str, int c, int count);
 void	*ft_memcpy(void *dest, void *src, int len);
 void *ft_memccpy(void *dest, void *src, int c, int len);
 void *ft_memmove(void *dest, void *src, int len);
+int ft_isascii(int c);
+int ft_isprint(int c);
+void *ft_memchr(void *memblock, int c, int size);
+int ft_memcmp(const void *pointer1, const void *pointer2, size_t size);
+int ft_toupper(int c);
+int ft_tolower(int c);
+size_t ft_strlcpy(char *dest, const char *src, size_t size);
 
 #endif
