@@ -33,5 +33,6 @@ char *ft_strrchr(const char *str, int c);
 char *ft_strnstr(char *str, char *to_find, size_t n);
 int ft_atoi(const char *str);
 char *ft_strstr(char *str, char *to_find);
+void ft_putnbr(int n);
 
 #endif
