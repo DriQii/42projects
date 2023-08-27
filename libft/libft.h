@@ -28,5 +28,7 @@ int ft_memcmp(const void *pointer1, const void *pointer2, size_t size);
 int ft_toupper(int c);
 int ft_tolower(int c);
 size_t ft_strlcpy(char *dest, const char *src, size_t size);
+char *ft_strchr(const char *string, int searchedChar);
+char *ft_strrchr(const char *str, int c);
 
 #endif
