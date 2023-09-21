@@ -1,17 +1,17 @@
 
 #include <string.h>
 
-void *ft_memchr(void *memblock, int c, int size)
+void *ft_memchr(const void *memblock, int c, size_t size)
 {
-	int i;
-	char *str;
+	size_t i;
+	const char *str;
 
 	i = 0;
 	str = memblock;
 	while (i < size)
 	{
-		if (str[i] == c)
-			return (&str[i]);
+		if (str[i] == (unsigned char)c)
+			return ((char *)&str[i]);
 		i++;
 	}
 	return (NULL);
