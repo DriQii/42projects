@@ -1,5 +1,7 @@
 
 #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 static int ft_strlen(char *str)
 {
@@ -12,7 +14,6 @@ static int ft_strlen(char *str)
     }
     return (i);
 }
-
 size_t ft_strlcat(char *dest, const char *src, size_t size)
 {
     size_t i;
@@ -36,4 +37,14 @@ size_t ft_strlcat(char *dest, const char *src, size_t size)
     }
     dest[i] = '\0';
     return (dest_len + src_len);
-}
+}/*
+int main(void)
+{
+    char *dest;
+    dest = (char *)malloc(sizeof(*dest) * 16);
+    memset(dest, 0, 16);
+	memset(dest, 'r', 6);
+    memset(dest, 'r', 15);
+    printf("%ld\n", ft_strlcat(dest, "lorem ipsum dolor sit amet", 5));
+    printf("%s\n", dest);
+}*/
