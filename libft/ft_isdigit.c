@@ -1,4 +1,4 @@
-int ft_isdigit(char nb)
+int ft_isdigit(int nb)
 {
     if (nb < '0' || nb > '9')
         return(0);

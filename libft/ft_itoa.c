@@ -59,6 +59,8 @@ char *ft_itoa(int c)
 	i = 0;
 	count = ft_countnb(c);
 	s = (char *)malloc(sizeof(char) * (count + 1));
+	if (!s)
+		return (NULL);
 	if (c < 0)
 	{
 		count--;

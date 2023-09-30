@@ -32,8 +32,12 @@ char *ft_strjoin(char const *s1, char const *s2)
 	char *str;
 
 	str = (char *)malloc(sizeof(char) *(ft_strlen((char*)s1) + ft_strlen((char*)s2) + 1));
-	ft_strcpy((char *)str, (char *)s1);
-	ft_strcpy((char *)str + ft_strlen((char *) s1), (char *)s2);
+    if (!str)
+    {
+        return (NULL);
+    }
+	ft_strcpy(str, (char *)s1);
+	ft_strcpy(str + ft_strlen((char *) s1), (char *)s2);
 	return (str);
 }
 
