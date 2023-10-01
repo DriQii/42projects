@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: evella <evella@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/02 00:15:21 by evella            #+#    #+#             */
+/*   Updated: 2023/10/02 00:15:21 by evella           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-static int ft_intlen(int n)
+static int	ft_intlen(int n)
 {
-	int len;
+	int	len;
 
 	len = 1;
 	while (n / 10 != 0)
@@ -14,10 +25,10 @@ static int ft_intlen(int n)
 	return (len);
 }
 
-void ft_putnbr(int n)
+void	ft_putnbr(int n)
 {
-	int len;
-	char res;
+	int		len;
+	char	res;
 
 	if (n == -2147483648)
 	{

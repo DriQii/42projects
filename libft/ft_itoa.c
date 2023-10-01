@@ -1,11 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: evella <evella@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/01 22:36:23 by evella            #+#    #+#             */
+/*   Updated: 2023/10/01 23:29:47 by evella           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <stdlib.h>
 
-static int ft_countnb(int c)
+static int	ft_countnb(int c)
 {
-	int count;
-	count = 0;
+	int	count;
 
+	count = 0;
 	if (c < 0)
 	{
 		count++;
@@ -20,12 +31,12 @@ static int ft_countnb(int c)
 	return (count);
 }
 
-char *ft_intmin(void)
+static char	*ft_intmin(void)
 {
-	char *s;
-	int len;
-	int i;
-	int c;
+	char	*s;
+	int		len;
+	int		i;
+	int		c;
 
 	c = 2147483647;
 	i = 1;
@@ -43,24 +54,12 @@ char *ft_intmin(void)
 	s[i + 1] = '\0';
 	return (s);
 }
-char *ft_itoa(int c)
-{
-	int i;
-	int count;
-	int len;
-	char *s;
 
-	if (c == -2147483648)
-	{
-		s = ft_intmin();
-		return (s);
-	}
-	len = 1;
+static char	*ft_addstr(char *s, int count, int len, int c)
+{
+	int	i;
+
 	i = 0;
-	count = ft_countnb(c);
-	s = (char *)malloc(sizeof(char) * (count + 1));
-	if (!s)
-		return (NULL);
 	if (c < 0)
 	{
 		count--;
@@ -79,4 +78,23 @@ char *ft_itoa(int c)
 	s[i] = c / len + '0';
 	s[i + 1] = '\0';
 	return (s);
+}
+
+char	*ft_itoa(int c)
+{
+	int		count;
+	int		len;
+	char	*s;
+
+	if (c == -2147483648)
+	{
+		s = ft_intmin();
+		return (s);
+	}
+	len = 1;
+	count = ft_countnb(c);
+	s = (char *)malloc(sizeof(char) * (count + 1));
+	if (!s)
+		return (NULL);
+	return (ft_addstr(s, count, len, c));
 }

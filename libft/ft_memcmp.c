@@ -1,11 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: evella <evella@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/01 23:49:02 by evella            #+#    #+#             */
+/*   Updated: 2023/10/01 23:49:11 by evella           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-int ft_memcmp(const void *pointer1, const void *pointer2, size_t size)
+int	ft_memcmp(const void *pointer1, const void *pointer2, size_t size)
 {
-	size_t i;
-	const char *str1;
-	const char *str2;
+	size_t		i;
+	const char	*str1;
+	const char	*str2;
 
 	i = 0;
 	str1 = pointer1;

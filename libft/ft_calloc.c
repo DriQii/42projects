@@ -1,22 +1,24 @@
-#include <string.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: evella <evella@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/01 23:45:06 by evella            #+#    #+#             */
+/*   Updated: 2023/10/01 23:45:32 by evella           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static void	ft_bzero(void *str, int len)
+#include "libft.h"
+
+void	*ft_calloc(size_t count, size_t size)
 {
-	char *temp;
+	void	*temp;
 
-	temp = str;
-	while(len-- > 0)
-		*temp++ = '\0';
-}
-
-void *ft_calloc(size_t count, size_t size)
-{
-    void *temp;
-
-    temp = malloc(count * size);
-    if (!temp)
-        return (NULL);
-    ft_bzero(temp, count * size);
-    return ((void *)temp);
+	temp = malloc(count * size);
+	if (!temp)
+		return (NULL);
+	ft_bzero(temp, count * size);
+	return ((void *)temp);
 }

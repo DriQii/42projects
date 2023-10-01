@@ -1,22 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: evella <evella@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/02 00:07:21 by evella            #+#    #+#             */
+/*   Updated: 2023/10/02 00:23:37 by evella           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
-static int ft_strlen(char *str)
+#include "libft.h"
+
+static int	ft_charverif(char c, char const *set)
 {
-    int i;
-
-    i = 0;
-    while (str[i])
-    {
-        i++;
-    }
-    return (i);
-}
-
-static int ft_setverif(char c, char const *set)
-{
-	int i;
+	int	i;
 
 	i = 0;
 	while (set[i])
@@ -28,40 +26,44 @@ static int ft_setverif(char c, char const *set)
 	return (0);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+void	ft_setendstart(int *i, int *j, char const *s1, char const *set)
 {
-	char *str;
-	int i;
-	int j;
-	int k;
+	int	k;
+	int	l;
 
 	k = 0;
-	j = ft_strlen((char *) s1);
+	l = ft_strlen((char *) s1);
+	while (s1[k] && ft_charverif(s1[k], set))
+		k++;
+	while (s1[l - 1] && ft_charverif(s1[l - 1], set))
+		l--;
+	*i = k;
+	*j = l;
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*str;
+	int		i;
+	int		j;
+	int		k;
+
+	k = 0;
 	i = 0;
-	while (s1[i] && ft_setverif(s1[i], set))
-		i++;
-	while (s1[j - 1] && ft_setverif(s1[j - 1], set))
-		j--;
+	ft_setendstart(&i, &j, s1, set);
 	if (i >= j)
 	{
 		str = (char *)malloc(sizeof(char));
 		str[0] = '\0';
-		return(str);
+		return (str);
 	}
 	str = (char *)malloc(sizeof(char) * (j - i + 1));
 	if (!str)
 		return (NULL);
 	while (i < j)
 	{
-		str[k] = s1[i];
-		k++;
-		i++;
+		str[k++] = s1[i++];
 	}
 	str[k] = '\0';
 	return (str);
-}/*
-int main(void)
-{
-	//char s1[] = "lorem \n ipsum \t dolor \n sit \t amet";
-	printf("%s",ft_strtrim("abcdba", "acb"));
-}*/
+}
