@@ -6,35 +6,42 @@
 /*   By: evella <evella@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 21:56:15 by evella            #+#    #+#             */
-/*   Updated: 2023/10/02 00:02:49 by evella           ###   ########.fr       */
+/*   Updated: 2023/10/04 19:06:36 by evella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static void	*ft_freecontent(void *tempcontent)
+{
+	free(tempcontent);
+	return (NULL);
+}
+
 t_list	*ft_lstmap(t_list	*lst, void	*(*f)(void *), void	(*del)(void *))
 {
 	t_list	*map;
-	t_list	*startmap;
+	t_list	*temp;
+	void	*tempcontent;
 
 	if (!f || !del || !lst)
 		return (NULL);
-	map = ft_lstnew(f(lst->content));
+	tempcontent = f(lst->content);
+	map = ft_lstnew(tempcontent);
 	if (!map)
-		return (NULL);
-	lst = lst->next;
-	startmap = map;
-	while (lst)
+		return (ft_freecontent(tempcontent));
+	while (lst->next)
 	{
-		map->next = ft_lstnew(f(lst->content));
-		if (!map->next)
+		lst = lst->next;
+		tempcontent = f(lst->content);
+		temp = ft_lstnew(tempcontent);
+		if (!temp)
 		{
-			ft_lstclear(&startmap, del);
-			map = NULL;
+			free(tempcontent);
+			ft_lstclear(&map, del);
 			return (NULL);
 		}
-		lst = lst->next;
-		map = map->next;
+		ft_lstadd_back(&map, temp);
 	}
-	return (startmap);
+	return (map);
 }

@@ -6,7 +6,7 @@
 /*   By: evella <evella@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 23:40:59 by evella            #+#    #+#             */
-/*   Updated: 2023/10/01 23:41:11 by evella           ###   ########.fr       */
+/*   Updated: 2023/10/03 13:27:25 by evella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	free(temp);
 	temp = NULL;
 	*lst = NULL;
+	lst = NULL;
 }

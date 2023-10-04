@@ -6,7 +6,7 @@
 /*   By: evella <evella@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 00:07:21 by evella            #+#    #+#             */
-/*   Updated: 2023/10/02 00:23:37 by evella           ###   ########.fr       */
+/*   Updated: 2023/10/03 13:05:54 by evella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (i >= j)
 	{
 		str = (char *)malloc(sizeof(char));
+		if (!str)
+			return (NULL);
 		str[0] = '\0';
 		return (str);
 	}

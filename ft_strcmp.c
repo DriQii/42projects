@@ -6,11 +6,11 @@
 /*   By: evella <evella@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 00:05:48 by evella            #+#    #+#             */
-/*   Updated: 2023/10/02 00:06:13 by evella           ###   ########.fr       */
+/*   Updated: 2023/10/03 10:50:18 by evella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
 	int	i;
 

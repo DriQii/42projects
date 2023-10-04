@@ -6,11 +6,11 @@
 /*   By: evella <evella@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 23:14:37 by evella            #+#    #+#             */
-/*   Updated: 2023/10/01 23:14:39 by evella           ###   ########.fr       */
+/*   Updated: 2023/10/03 10:49:29 by evella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, const char *src)
 {
 	int	i;
 	int	j;

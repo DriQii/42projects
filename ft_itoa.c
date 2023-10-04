@@ -6,7 +6,7 @@
 /*   By: evella <evella@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 22:36:23 by evella            #+#    #+#             */
-/*   Updated: 2023/10/01 23:29:47 by evella           ###   ########.fr       */
+/*   Updated: 2023/10/03 13:16:59 by evella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ static char	*ft_intmin(void)
 	i = 1;
 	len = 1000000000;
 	s = (char *)malloc(sizeof(char) * 12);
+	if (!s)
+		return (0);
 	s[0] = '-';
 	while (len / 10 > 0)
 	{

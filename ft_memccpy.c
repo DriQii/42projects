@@ -6,14 +6,16 @@
 /*   By: evella <evella@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 23:42:57 by evella            #+#    #+#             */
-/*   Updated: 2023/10/01 23:43:10 by evella           ###   ########.fr       */
+/*   Updated: 2023/10/03 12:17:00 by evella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memccpy(void *dest, void *src, int c, int len)
+#include "libft.h"
+
+void	*ft_memccpy(void *dest, const void *src, int c, size_t len)
 {
-	char	*tempd;
-	char	*temps;
+	char		*tempd;
+	const char	*temps;
 
 	tempd = dest;
 	temps = src;

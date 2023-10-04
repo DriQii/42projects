@@ -6,7 +6,7 @@
 /*   By: evella <evella@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 22:48:19 by evella            #+#    #+#             */
-/*   Updated: 2023/10/01 23:57:40 by evella           ###   ########.fr       */
+/*   Updated: 2023/10/03 12:17:03 by evella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ typedef struct s_list
 int		ft_isalnum(char c);
 int		ft_isalpha(char c);
 int		ft_isdigit(int nb);
-char	*ft_strcat(char *dest, char *src);
-int		ft_strcmp(char *s1, char *s2);
-char	*ft_strcpy(char *dest, char *src);
+char	*ft_strcat(char *dest, const char *src);
+int		ft_strcmp(const char *s1, const char *s2);
+char	*ft_strcpy(char *dest, const char *src);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -37,7 +37,7 @@ char	*ft_strncpy(char *dest, const char *src, size_t n);
 void	ft_bzero(void *str, size_t len);
 void	*ft_memset(void *str, int c, size_t count);
 void	*ft_memcpy(void *dest, const void *src, size_t len);
-void	*ft_memccpy(void *dest, void *src, int c, int len);
+void	*ft_memccpy(void *dest, const void *src, int c, size_t len);
 void	*ft_memmove(void *dest, const void *src, size_t len);
 int		ft_isascii(int c);
 int		ft_isprint(int c);

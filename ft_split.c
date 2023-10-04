@@ -6,7 +6,7 @@
 /*   By: evella <evella@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 23:16:25 by evella            #+#    #+#             */
-/*   Updated: 2023/10/01 23:28:43 by evella           ###   ########.fr       */
+/*   Updated: 2023/10/04 19:10:00 by evella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,17 @@ static int	ft_countwords(char const *s, char c)
 	return (words);
 }
 
+static void	*ft_freetabtab(int k, char **tab)
+{
+	while (k > 0)
+	{
+		k--;
+		free(tab[k]);
+	}
+	free (tab);
+	return (NULL);
+}
+
 static char	**ft_mallocwords(char **tab, const char *s, char c)
 {
 	int	i;
@@ -44,7 +55,7 @@ static char	**ft_mallocwords(char **tab, const char *s, char c)
 		{
 			tab[k] = (char *)malloc(sizeof(char) * (j + 1));
 			if (!tab[k])
-				return (NULL);
+				return (ft_freetabtab(k, tab));
 			k++;
 			j = 0;
 		}

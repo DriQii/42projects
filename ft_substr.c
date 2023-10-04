@@ -6,7 +6,7 @@
 /*   By: evella <evella@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 23:51:25 by evella            #+#    #+#             */
-/*   Updated: 2023/10/02 00:32:36 by evella           ###   ########.fr       */
+/*   Updated: 2023/10/03 13:04:32 by evella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start > (unsigned int)ft_strlen((char *)s))
 	{
 		substr = (char *)malloc(sizeof(char));
+		if (!substr)
+			return (NULL);
 		substr[0] = '\0';
 		return (substr);
 	}
